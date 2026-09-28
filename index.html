@@ -1,184 +1,292 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bocchi Jam — Computer Science undergraduate at Hong Kong Baptist University, interested in computer vision, embodied AI, and image generation.">
-  <meta name="theme-color" content="#f5f5f7">
-  <meta property="og:title" content="Bocchi Jam">
-  <meta property="og:description" content="Personal homepage of Bocchi Jam.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bocchijamsuki.github.io/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <meta name="theme-color" content="#ffffff">
   <title>Bocchi Jam</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- Static English description for link previews and crawlers that do not run JavaScript.
+       Visible copy lives in assets/js/i18n.js. -->
+  <meta name="description" content="Bocchi Jam — computer science student at Hong Kong Baptist University, learning computer vision and image generation.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bocchi Jam">
+  <meta property="og:description" content="Computer science student at Hong Kong Baptist University, learning computer vision and image generation.">
+  <meta property="og:url" content="https://bocchijamsuki.github.io/">
+  <meta property="og:image" content="https://bocchijamsuki.github.io/avatar.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="avatar.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="avatar.jpg">
+  <script>
+    // Apply the saved language before first paint so the right fonts load.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('lang');
+        if (saved === 'en' || saved === 'zh-CN' || saved === 'zh-TW' || saved === 'ja') root.lang = saved;
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip"></a>
 
-  <header class="site-header" data-header>
-    <nav class="nav shell" aria-label="Primary navigation">
-      <a class="wordmark" href="#home" aria-label="Bocchi Jam, home">Bocchi Jam</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-button>
-        <span class="sr-only">Toggle navigation</span>
-        <span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links" data-nav-links>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#interests">Interests</a>
-        <a href="#publications">Publications</a>
-        <a class="nav-contact" href="#contact">Contact</a>
+  <noscript>
+    <p class="noscript">This site needs JavaScript to display its text. You can reach Bocchi Jam at bocchijam@gmail.com.</p>
+  </noscript>
+
+  <header class="nav" id="nav">
+    <div class="nav-bar wrap">
+      <a class="nav-brand" href="#top" data-i18n-attr="aria-label:nav.home">Bocchi Jam</a>
+
+      <nav class="nav-menu" id="nav-menu" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav-links">
+          <li><a href="#about" data-i18n="nav.about"></a></li>
+          <li><a href="#research" data-i18n="nav.research"></a></li>
+          <li><a href="#guestbook" data-i18n="nav.guestbook"></a></li>
+          <li><a href="#contact" data-i18n="nav.contact"></a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-tools">
+        <div class="lang">
+          <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu">
+            <svg class="lang-globe" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M1.75 8h12.5M8 1.75c1.7 1.8 2.55 3.88 2.55 6.25S9.7 12.45 8 14.25C6.3 12.45 5.45 10.37 5.45 8S6.3 3.55 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            <span class="lang-short" id="lang-short">EN</span>
+            <span class="visually-hidden" id="lang-label"></span>
+            <svg class="lang-chevron" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu" data-i18n-attr="aria-label:lang.menu" hidden></ul>
+        </div>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <section class="hero shell" id="home" aria-labelledby="hero-title">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Hello, I’m</p>
-        <h1 id="hero-title">Bocchi Jam.</h1>
-        <p class="hero-lede">Computer Science undergraduate exploring vision, intelligence, and generation.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#about">Discover more <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="https://github.com/bocchijamsuki" target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="scroll-cue" aria-hidden="true"><span></span></div>
-    </section>
-
-    <section class="section section-about" id="about" aria-labelledby="about-title">
-      <div class="shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Curious by nature.<br><span>Learning by building.</span></h2>
-        </div>
-        <dl class="profile-grid reveal">
-          <div class="profile-item">
-            <dt>Nickname</dt>
-            <dd>Bocchi Jam</dd>
-          </div>
-          <div class="profile-item">
-            <dt>University</dt>
-            <dd>Hong Kong Baptist University</dd>
-          </div>
-          <div class="profile-item">
-            <dt>Major</dt>
-            <dd>Computer Science and Technology</dd>
-          </div>
-          <div class="profile-item">
-            <dt>Degree</dt>
-            <dd>Undergraduate</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="research" aria-labelledby="research-title">
-      <div class="shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow eyebrow-light">Research Interests</p>
-          <h2 id="research-title">Ideas worth<br><span>exploring.</span></h2>
-        </div>
-        <div class="research-grid">
-          <article class="research-card reveal">
-            <span class="card-index">01</span>
-            <div class="research-icon" aria-hidden="true"><span class="vision-frame"></span><span class="vision-dot"></span></div>
-            <h3>Computer Vision</h3>
-          </article>
-          <article class="research-card reveal">
-            <span class="card-index">02</span>
-            <div class="research-icon embodied-icon" aria-hidden="true"><span></span><span></span><span></span></div>
-            <h3>Embodied AI</h3>
-          </article>
-          <article class="research-card reveal">
-            <span class="card-index">03</span>
-            <div class="research-icon generation-icon" aria-hidden="true"><span></span></div>
-            <h3>Image Generation</h3>
-          </article>
+  <main id="main" tabindex="-1">
+    <!-- Home -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <img class="avatar" src="avatar.jpg" width="888" height="888" alt="" data-i18n-attr="alt:hero.avatarAlt" fetchpriority="high" data-reveal>
+        <h1 class="hero-title" id="hero-title" lang="en" data-reveal style="--delay: 80ms">Bocchi Jam</h1>
+        <p class="hero-intro" data-i18n="hero.intro" data-reveal style="--delay: 160ms"></p>
+        <div class="hero-actions" data-reveal style="--delay: 240ms">
+          <a class="btn btn-primary" href="#about" data-i18n="hero.more"></a>
+          <a class="btn btn-secondary" href="#contact" data-i18n="hero.contact"></a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="interests" aria-labelledby="interests-title">
-      <div class="shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Personal Interests</p>
-          <h2 id="interests-title">Beyond the screen.<br><span>Things I love.</span></h2>
-        </div>
-        <div class="interest-grid">
-          <article class="interest-card interest-feature reveal">
-            <div class="interest-copy">
-              <p class="card-label">Anime</p>
-              <h3>Bocchi the Rock!</h3>
-            </div>
-            <div class="abstract-art art-anime" aria-hidden="true"><span></span><span></span><span></span></div>
+    <!-- About -->
+    <section class="section section-alt" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="about.eyebrow"></p>
+          <h2 class="section-title" id="about-title" data-i18n="about.title"></h2>
+          <p class="section-lead" data-i18n="about.lead"></p>
+        </header>
+
+        <div class="bento">
+          <article class="card span-full motto" data-reveal>
+            <h3 class="card-label" data-i18n="about.motto.label"></h3>
+            <p class="motto-text" lang="ja" data-i18n-phrases="about.motto.phrases"></p>
+            <p class="motto-translation" data-i18n="about.motto.translation"></p>
           </article>
-          <article class="interest-card reveal">
-            <div class="interest-copy">
-              <p class="card-label">Favourite Characters</p>
-              <h3>Hitori Goto</h3>
-              <p>Bocchi the Rock!</p>
-              <hr>
-              <h3>Izumi Hiyori</h3>
-              <p>Hazurewaku Creative</p>
+
+          <article class="card span-2" data-reveal>
+            <h3 class="card-label" data-i18n="about.education.label"></h3>
+            <p class="card-headline" data-i18n="about.education.school"></p>
+            <p class="card-text" data-i18n="about.education.degree"></p>
+            <p class="card-meta" data-i18n="about.education.meta"></p>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3 class="card-label" data-i18n="about.interests.label"></h3>
+            <ul class="items items-large" data-i18n-list="about.interests.items"></ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3 class="card-label" data-i18n="about.anime.label"></h3>
+            <ul class="items" data-i18n-list="about.anime.items"></ul>
+            <p class="card-note" data-i18n="about.anime.note"></p>
+          </article>
+
+          <article class="card span-2" data-reveal>
+            <h3 class="card-label" data-i18n="about.music.label"></h3>
+            <div class="music">
+              <div class="music-group">
+                <h4 class="music-label" data-i18n="about.music.acg.label"></h4>
+                <ul class="items" data-i18n-list="about.music.acg.items"></ul>
+              </div>
+              <div class="music-group">
+                <h4 class="music-label" data-i18n="about.music.classical.label"></h4>
+                <ul class="items" data-i18n-list="about.music.classical.items"></ul>
+              </div>
+              <div class="music-group">
+                <h4 class="music-label" data-i18n="about.music.marches.label"></h4>
+                <ul class="items" data-i18n-list="about.music.marches.items"></ul>
+              </div>
             </div>
           </article>
-          <article class="interest-card reveal">
-            <div class="interest-copy">
-              <p class="card-label">Music</p>
-              <h3>Japanese<br>ACG Music</h3>
-            </div>
-            <div class="sound-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+          <article class="card" data-reveal>
+            <h3 class="card-label" data-i18n="about.visualNovels.label"></h3>
+            <ul class="items" data-i18n-list="about.visualNovels.items"></ul>
           </article>
-          <article class="interest-card interest-games reveal">
-            <div class="interest-copy">
-              <p class="card-label">Games</p>
-              <h3>AAA Games</h3>
-            </div>
-            <div class="controller" aria-hidden="true"><span></span><i></i><b></b></div>
+
+          <article class="card" data-reveal>
+            <h3 class="card-label" data-i18n="about.lightNovels.label"></h3>
+            <ul class="items" data-i18n-list="about.lightNovels.items"></ul>
           </article>
+
+          <article class="card" data-reveal>
+            <h3 class="card-label" data-i18n="about.book.label"></h3>
+            <ul class="items" data-i18n-list="about.book.items"></ul>
+          </article>
+
+          <article class="card span-3" data-reveal>
+            <h3 class="card-label" data-i18n="about.history.label"></h3>
+            <p class="card-prose" data-i18n="about.history.text"></p>
+          </article>
+        </div>
+
+        <div class="subsection">
+          <header class="subsection-head" data-reveal>
+            <h3 class="subsection-title" data-i18n="about.characters.label"></h3>
+            <p class="subsection-lead" data-i18n="about.characters.note"></p>
+          </header>
+          <div class="characters">
+            <article class="card character character-pink" data-reveal>
+              <p class="character-work" data-i18n="about.characters.hitori.work"></p>
+              <div>
+                <h4 class="character-name" data-i18n="about.characters.hitori.name"></h4>
+                <p class="character-reading" lang="ja" data-i18n="about.characters.hitori.reading"></p>
+              </div>
+            </article>
+            <article class="card character character-sky" data-reveal style="--delay: 80ms">
+              <p class="character-work" data-i18n="about.characters.kotonoha.work"></p>
+              <div>
+                <h4 class="character-name" data-i18n="about.characters.kotonoha.name"></h4>
+                <p class="character-reading" lang="ja" data-i18n="about.characters.kotonoha.reading"></p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section publications" id="publications" aria-labelledby="publications-title">
-      <div class="shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Publications</p>
-          <h2 id="publications-title">Research,<br><span>in progress.</span></h2>
+    <!-- Research & Projects -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="research.eyebrow"></p>
+          <h2 class="section-title" id="research-title" data-i18n="research.title"></h2>
+          <p class="section-lead" data-i18n="research.lead"></p>
+        </header>
+
+        <div class="group">
+          <h3 class="group-title" data-i18n="research.researchLabel" data-reveal></h3>
+          <ol class="entries">
+            <li class="entry" data-reveal>
+              <p class="entry-date" data-i18n="research.hoi.date"></p>
+              <div class="entry-body">
+                <p class="entry-status"><span class="pill" data-i18n="research.status.ongoing"></span></p>
+                <h4 class="entry-title" data-i18n="research.hoi.title"></h4>
+                <p class="entry-org" data-i18n="research.hoi.org"></p>
+                <p class="entry-text" data-i18n="research.hoi.text"></p>
+              </div>
+            </li>
+            <li class="entry" data-reveal>
+              <p class="entry-date" data-i18n="research.generative.date"></p>
+              <div class="entry-body">
+                <h4 class="entry-title" data-i18n="research.generative.title"></h4>
+                <p class="entry-text" data-i18n="research.generative.text"></p>
+              </div>
+            </li>
+          </ol>
         </div>
-        <div class="empty-state reveal">
-          <div class="empty-mark" aria-hidden="true"><span></span></div>
-          <p>Publications will appear here.</p>
+
+        <div class="group">
+          <h3 class="group-title" data-i18n="research.projectsLabel" data-reveal></h3>
+          <ul class="projects">
+            <li class="project" data-reveal>
+              <h4 class="project-title" data-i18n="research.faceVerification.title"></h4>
+              <p class="project-text" data-i18n="research.faceVerification.text"></p>
+            </li>
+            <li class="project" data-reveal style="--delay: 80ms">
+              <h4 class="project-title" data-i18n="research.lineArt.title"></h4>
+              <p class="project-text" data-i18n="research.lineArt.text"></p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3 class="group-title" data-i18n="research.skillsLabel" data-reveal></h3>
+          <ul class="chips" data-i18n-list="research.skills" data-reveal></ul>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <div class="shell contact-inner reveal">
-        <p class="eyebrow eyebrow-light">Contact</p>
-        <h2 id="contact-title">Let’s connect.</h2>
-        <p>Find me on GitHub or send me an email.</p>
-        <div class="contact-links">
-          <a href="https://github.com/bocchijamsuki" target="_blank" rel="noreferrer">
-            <span>GitHub</span><span aria-hidden="true">↗</span>
-          </a>
-          <a href="mailto:bocchijamsuki@gmail.com">
-            <span>Email</span><span aria-hidden="true">↗</span>
-          </a>
+    <!-- Guestbook -->
+    <section class="section section-alt" id="guestbook" aria-labelledby="guestbook-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="guestbook.eyebrow"></p>
+          <h2 class="section-title" id="guestbook-title" data-i18n="guestbook.title"></h2>
+          <p class="section-lead" data-i18n="guestbook.lead"></p>
+        </header>
+        <div class="card guestbook-card" data-reveal>
+          <div class="giscus" id="giscus"></div>
+          <p class="guestbook-pending" id="guestbook-pending" data-i18n="guestbook.pending" hidden></p>
         </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+          <h2 class="section-title" id="contact-title" data-i18n="contact.title"></h2>
+          <p class="section-lead" data-i18n="contact.lead"></p>
+        </header>
+
+        <ul class="contact-list">
+          <li class="contact-row" data-reveal>
+            <span class="contact-label" data-i18n="contact.email"></span>
+            <span class="contact-value">
+              <a class="contact-link" href="mailto:bocchijam@gmail.com">bocchijam@gmail.com<svg class="arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3.5 8.5l5-5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <button class="copy-btn" id="copy-email" type="button" data-copy="bocchijam@gmail.com" data-i18n-attr="aria-label:contact.copyLabel"><span data-i18n="contact.copy"></span></button>
+            </span>
+          </li>
+          <li class="contact-row" data-reveal>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">
+              <a class="contact-link" href="https://github.com/BocchiJamSuki" target="_blank" rel="noopener noreferrer">github.com/BocchiJamSuki<svg class="arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3.5 8.5l5-5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden" data-i18n="a11y.newTab"></span></a>
+            </span>
+          </li>
+          <li class="contact-row" data-reveal>
+            <span class="contact-label">bilibili</span>
+            <span class="contact-value">
+              <a class="contact-link" href="https://space.bilibili.com/391771104" target="_blank" rel="noopener noreferrer">space.bilibili.com/391771104<svg class="arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3.5 8.5l5-5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden" data-i18n="a11y.newTab"></span></a>
+            </span>
+          </li>
+        </ul>
+        <p class="visually-hidden" id="copy-status" role="status" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <p>© <span data-year></span> Bocchi Jam</p>
-      <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+  <footer class="footer" id="footer">
+    <div class="wrap footer-inner">
+      <p data-i18n="footer.copyright"></p>
+      <a href="#top" data-i18n="footer.top"></a>
     </div>
   </footer>
 </body>
