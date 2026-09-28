@@ -15,6 +15,7 @@ Plain HTML, CSS and JavaScript — no framework, no build step.
 | `assets/css/giscus.css` | Guestbook theme, loaded by Giscus on the live site. |
 | `giscus.json` | Lets only this site (and local previews) embed the guestbook. |
 | `avatar.jpg` | Avatar, also used as the site icon. |
+| `assets/img/` | Portraits for the favourite-character cards (480 × 480 WebP). |
 
 ## Preview locally
 

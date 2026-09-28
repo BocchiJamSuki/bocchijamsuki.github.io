@@ -737,9 +737,8 @@ html:lang(ja) .items-large .item-title {
 .character {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 56px;
-  min-height: clamp(220px, 24vw, 300px);
+  align-items: flex-start;
+  gap: clamp(32px, 4vw, 48px);
 }
 
 .character-pink {
@@ -750,7 +749,18 @@ html:lang(ja) .items-large .item-title {
   background: var(--sky-wash);
 }
 
+/* Same round frame as the avatar in the hero. */
+.character-portrait {
+  width: clamp(104px, 8vw + 24px, 136px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
 .character-work {
+  margin-bottom: 8px;
   color: #5d5d62;
   font-size: 15px;
   font-weight: 600;
@@ -1097,8 +1107,7 @@ html:lang(ja) .items-large .item-title {
   }
 
   .character {
-    min-height: 200px;
-    gap: 40px;
+    gap: 32px;
   }
 
   .entry,

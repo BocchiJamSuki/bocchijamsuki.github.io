@@ -7,9 +7,9 @@
   // Until both are filled in, the guestbook shows a short "opening soon" note.
   const GISCUS = {
     repo: 'BocchiJamSuki/BocchiJamSuki.github.io',
-    repoId: '',
+    repoId: 'R_kgDOTUVwRw',
     category: 'Guestbook',
-    categoryId: '',
+    categoryId: 'DIC_kwDOTUVwR84DGmN7',
     term: 'guestbook'
   };
   const GISCUS_ORIGIN = 'https://giscus.app';
