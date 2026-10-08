@@ -132,7 +132,7 @@ window.SITE_I18N = {
       },
       characters: {
         label: 'Favourite characters',
-        note: 'I have a soft spot for gentle girls.',
+        note: 'I have a soft spot for gentle girls — especially the graceful, quietly strong kind the Japanese call yamato nadeshiko.',
         hitori: {
           name: 'Hitori Gotoh',
           reading: 'ごとう ひとり',
@@ -183,7 +183,7 @@ window.SITE_I18N = {
     contact: {
       eyebrow: 'Contact',
       title: 'Say hello.',
-      lead: 'Email is the best way to reach me. I’m also on GitHub and bilibili.',
+      lead: 'Email is the best way to reach me. I’m also on GitHub, bilibili and X.',
       email: 'Email',
       copy: 'Copy',
       copied: 'Copied',
@@ -301,7 +301,7 @@ window.SITE_I18N = {
       },
       characters: {
         label: '喜欢的角色',
-        note: '总是偏爱温柔的女孩子。',
+        note: '总是偏爱温柔的女孩子，尤其是端庄娴静、外柔内刚的大和抚子。',
         hitori: {
           name: '后藤一里',
           work: '孤独摇滚！'
@@ -348,7 +348,7 @@ window.SITE_I18N = {
     contact: {
       eyebrow: '联系',
       title: '打个招呼吧。',
-      lead: '发邮件是联系我最方便的方式。也可以在 GitHub 和 bilibili 找到我。',
+      lead: '发邮件是联系我最方便的方式。也可以在 GitHub、bilibili 和 X 上找到我。',
       email: '邮箱',
       copy: '复制',
       copied: '已复制',
@@ -465,7 +465,7 @@ window.SITE_I18N = {
       },
       characters: {
         label: '喜歡的角色',
-        note: '總是偏愛溫柔的女孩子。',
+        note: '總是偏愛溫柔的女孩子，尤其是端莊嫻靜、外柔內剛的大和撫子。',
         hitori: {
           name: '後藤一里',
           work: '孤獨搖滾！'
@@ -512,7 +512,7 @@ window.SITE_I18N = {
     contact: {
       eyebrow: '聯絡',
       title: '打聲招呼吧。',
-      lead: '寄電子郵件是聯絡我最方便的方式。也可以在 GitHub 和 bilibili 找到我。',
+      lead: '寄電子郵件是聯絡我最方便的方式。也可以在 GitHub、bilibili 和 X 上找到我。',
       email: '電子郵件',
       copy: '複製',
       copied: '已複製',
@@ -619,7 +619,7 @@ window.SITE_I18N = {
       },
       characters: {
         label: '好きなキャラクター',
-        note: 'やさしい女の子に、つい惹かれてしまいます。',
+        note: 'やさしい女の子、とりわけ凛として奥ゆかしい大和撫子に、つい惹かれてしまいます。',
         hitori: {
           name: '後藤ひとり',
           work: 'ぼっち・ざ・ろっく！'
@@ -666,7 +666,7 @@ window.SITE_I18N = {
     contact: {
       eyebrow: '連絡先',
       title: 'お気軽にどうぞ。',
-      lead: 'ご連絡はメールがいちばん確実です。GitHub と bilibili にもいます。',
+      lead: 'ご連絡はメールがいちばん確実です。GitHub、bilibili、X にもいます。',
       email: 'メール',
       copy: 'コピー',
       copied: 'コピーしました',
